@@ -5,8 +5,6 @@ import {
     Button,
     CssBaseline,
     TextField,
-    FormControlLabel,
-    Grid,
     Box,
     Typography,
     Container
@@ -39,7 +37,7 @@ const Login = () => {
                         <LockPersonIcon />
                     </Avatar>
                     <Typography component="h1" variant="h5">
-                        Sign in
+                        Incidencias EIA
                     </Typography>
                     <Box component="form" onSubmit={handleSubmit} noValidate sx={{ mt: 1 }}>
                         <TextField
@@ -62,6 +60,14 @@ const Login = () => {
                             id="password"
                             autoComplete="current-password"
                         />
+                        <Button
+                            type="submit"
+                            fullWidth
+                            variant="contained"
+                            sx={{ mt: 3, mb: 2 }}
+                        >
+                            Acceder
+                        </Button>
                     </Box>
                 </Box>
             </Container>
