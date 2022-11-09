@@ -1,0 +1,113 @@
+.overlay{
+    width: 100vw;
+    height: 100vh;
+    position: fixed;
+    top: 0;
+    left: 0;
+    background: rgba(0, 0, 0, .5);
+    padding: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.containerModal{
+    width: 500px;
+    min-height: 100px;
+    background: #fff;
+    position: relative;
+    border-radius: 20px;
+    box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;
+    padding: 10px 20px 20px 20px;
+}
+
+.modalHeader{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-bottom: 0px;
+    padding-bottom: 20px;
+    border-bottom: 1px solid #E8E8E8;
+    padding: 0;
+}
+
+h3{
+    font-weight: 500;
+    font-size: 16px;
+    color: #1766DC;  
+}
+
+.closeButton{
+    position: absolute;
+    background: none;
+    top: 15px;
+    right: 20px;
+    width: 30px;
+    height: 30px;
+    border: none;
+    cursor: pointer;
+    transition: .3s ease all;
+    border-radius: 5px;
+    color: #1766DC;
+    padding: 0;
+}
+
+.closeButton:hover{
+    background: #f2f2;
+}
+
+svg{
+    width: 100%;
+    height: 100%;
+}
+
+.rightButtonAccept{
+    float: right;
+    padding: 10px 30px;
+    border-radius: 100px;
+    color: #fff;
+    border: none;
+    background: #8BC34A;
+    cursor: pointer;
+    font-weight: 500;
+    transition: .3s ease all;
+}
+
+.rightButtonAccept:hover{
+    background: #689F38;
+}
+
+.leftButtonCancel{
+    float: left;
+    padding: 10px 30px;
+    border-radius: 100px;
+    color: #fff;
+    border: none;
+    background: #CA3433;
+    cursor: pointer;
+    font-weight: 500;
+    transition: .3s ease all;
+}
+
+.leftButtonCancel:hover{
+    background: #8D021F;
+}
+
+.content{
+    max-width: 1170px;
+    margin-left: auto;
+    margin-right: auto;
+    padding: 1.5em 1;
+}
+
+.incident-form form{
+    margin: 0;
+    padding: 1em;
+}
+
+.incident-form form,
+.incident-form form input,
+.incident-form form textarea{
+    width: 96%;
+    padding: .7em;
+}
