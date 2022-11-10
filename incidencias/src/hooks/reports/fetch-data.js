@@ -8,7 +8,7 @@ export const useFetchReports = () =>{
         (async()=>{
             await getReports()
             .then(({data})=>{
-                // console.log(data);
+                // console.log('Gg',data);
                 setReports(data)
             })
             .catch((error)=>{

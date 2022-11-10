@@ -15,10 +15,10 @@ import axios from "axios";
 
 const ClassroomsCards = () => {
     const { FetchClassrooms } = useFetchInitClassrooms();
-    const { classrooms } = FetchClassrooms;
+    const { classrooms, refreshClassrooms } = FetchClassrooms;
 
     const { FetchDataReports } = useFetchInitDataReports();
-    const { reportsData } = FetchDataReports;
+    const { reportsData, refreshReport } = FetchDataReports;
 
     const [stateModal, setStateModal] = useState({
         open: false,
@@ -41,7 +41,6 @@ const ClassroomsCards = () => {
         titulo: "",
         descripcion: "",
         id_estado_incidencia: 1,
-        id_aula: ""
     });
 
     const handleChange = (e) => {
@@ -54,16 +53,21 @@ const ClassroomsCards = () => {
 
     const handleSubmit = (e) => {
         e.preventDefault();
+        const { id_aula } = stateModal.params;
         const userData = {
             titulo: state.titulo,
             descripcion: state.descripcion,
             id_estado_incidencia: state.id_estado_incidencia,
-            id_aula: state.id_aula
+            id_aula
         };
         axios.post("http://localhost:3050/reporte/reportes", userData).then((response) => {
             console.log(response.status);
             console.log(response.data);
-            setStateModal(false)
+            console.log('Prueba de que si entra');
+            toggle()
+            refreshClassrooms()
+            refreshReport()
+            console.log('Prueba de que si sale');
         });
     };
 
@@ -132,7 +136,7 @@ const ClassroomsCards = () => {
                                     onChange={handleChange}
                                 ></input>
                             </p> */}
-                            <p>
+                            {/* <p>
                                 <label>ID Aula</label>
                                 <input
                                     type="text"
@@ -140,7 +144,7 @@ const ClassroomsCards = () => {
                                     value={state.id_aula}
                                     onChange={handleChange}
                                 ></input>
-                            </p>
+                            </p> */}
                             <button
                             type="submit" 
                             className='rightButtonAccept'

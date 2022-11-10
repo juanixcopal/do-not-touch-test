@@ -1,12 +1,12 @@
 import React from 'react';
-import '../../styles/staff/incidentsViews.css'
 
-import DashboardLayout from '../../components/LayoutContainers/DashboardLayout';
 const FloorOneIncidents = () =>{
     return(
-        <DashboardLayout>
-            
-        </DashboardLayout>
+        <>
+        <div className='content'>
+            Hola planta 1
+        </div>
+        </>
     )
 }
 
