@@ -15,10 +15,10 @@ import axios from "axios";
 
 const ClassroomsCards = () => {
     const { FetchClassrooms } = useFetchInitClassrooms();
-    const { classrooms, refreshClassrooms } = FetchClassrooms;
+    const { classrooms } = FetchClassrooms;
 
     const { FetchDataReports } = useFetchInitDataReports();
-    const { reportsData, refreshReport } = FetchDataReports;
+    const { reportsData } = FetchDataReports;
 
     const [stateModal, setStateModal] = useState({
         open: false,
@@ -52,7 +52,7 @@ const ClassroomsCards = () => {
     };
 
     const handleSubmit = (e) => {
-        e.preventDefault();
+        // e.preventDefault();
         const { id_aula } = stateModal.params;
         const userData = {
             titulo: state.titulo,
@@ -60,14 +60,10 @@ const ClassroomsCards = () => {
             id_estado_incidencia: state.id_estado_incidencia,
             id_aula
         };
-        axios.post("http://localhost:3050/reporte/reportes", userData).then((response) => {
-            console.log(response.status);
-            console.log(response.data);
-            console.log('Prueba de que si entra');
+        axios.post("http://172.27.20.114:3050/reporte/reportes", userData).then((response) => {
+            // console.log(response.status);
+            // console.log(response.data);
             toggle()
-            refreshClassrooms()
-            refreshReport()
-            console.log('Prueba de que si sale');
         });
     };
 
@@ -91,7 +87,7 @@ const ClassroomsCards = () => {
                                     <CardActions key={id_aula}>
                                         <Button
                                             size="small"
-                                            onClick={() => toggle(null, id_aula + tipo_aula + aula, 'create-incidence', item)}
+                                            onClick={() => toggle(null, [[tipo_aula] , [aula]], 'create-incidence', item)}
                                         >Añadir Incidencia</Button>
                                     </CardActions>
                                 </Card>
@@ -127,28 +123,9 @@ const ClassroomsCards = () => {
                                     onChange={handleChange}
                                 ></textarea>
                             </p>
-                            {/* <p>
-                                <label>ID Estado Incidencia</label>
-                                <input
-                                    type="text"
-                                    name="id_estado_incidencia"
-                                    value={state.id_estado_incidencia}
-                                    onChange={handleChange}
-                                ></input>
-                            </p> */}
-                            {/* <p>
-                                <label>ID Aula</label>
-                                <input
-                                    type="text"
-                                    name="id_aula"
-                                    value={state.id_aula}
-                                    onChange={handleChange}
-                                ></input>
-                            </p> */}
                             <button
                             type="submit" 
                             className='rightButtonAccept'
-
                             >Crear</button>
                             <button
                                 className='leftButtonCancel'

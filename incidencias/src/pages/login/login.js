@@ -14,7 +14,7 @@ import { createTheme, ThemeProvider } from '@mui/material/styles';
 const Login = () => {
     const theme = createTheme();
     const handleSubmit = (event) => {
-        event.preventDefault();
+        // event.preventDefault();
         const data = new FormData(event.currentTarget);
         console.log({
             user: data.get('user'),

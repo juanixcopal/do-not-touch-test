@@ -1,15 +1,10 @@
-import { fabClasses } from "@mui/material";
+// import { fabClasses } from "@mui/material";
 import { useEffect, useState } from "react"
 import { getClassrooms } from "../../data/classrooms/get.js"
 
-let refresh = 0;
 
 export const useFetchClassrooms = () =>{
     const [ classrooms, setClassrooms ] = useState([])
-
-    const refreshClassrooms = () => {
-        refresh = refresh+1;
-    }
 
     useEffect(()=>{
         (async()=>{
@@ -24,5 +19,5 @@ export const useFetchClassrooms = () =>{
         })()
         // return () => {}
     },[])
-    return {classrooms,refreshClassrooms}
+    return {classrooms}
 }
