@@ -33,15 +33,10 @@ function Sidebar(props) {
       data-color={props.bgColor}
       data-active-color={props.activeColor}
     >
-      <div className="logo">
-        <a className="simple-text logo-mini">
-          <div className="logo-img">
-            {/* <img src={logoCevicheria} alt="react-logo" /> */}
-          </div>
-        </a>
-        <a className="simple-text logo-normal">
+      <div className="logo text-center">
+        <h1 className="simple-text logo-normal" >
           Incidencias EIA
-        </a>
+        </h1>
       </div>
       <div className="sidebar-wrapper" ref={sidebar}>
         <Nav>

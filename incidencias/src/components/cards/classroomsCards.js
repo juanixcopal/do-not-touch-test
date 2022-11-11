@@ -1,4 +1,5 @@
 import React, { useState } from "react";
+// import '../../styles/classroomsCards/classroomsCards.css'
 import { useFetchInitClassrooms } from "../../hooks/classrooms/index";
 import { useFetchInitDataReports } from "../../hooks/dataReports/index";
 
@@ -73,9 +74,8 @@ const ClassroomsCards = () => {
                 classrooms.map((item) => {
                     const { id_aula, aula, tipo_aula, id_planta } = item
                     return (
-                        <>
                             <TabPanel value={String(id_planta)} key={id_aula}>
-                                <Card className='cards' key={id_aula}>
+                                <Card className='cards'>
 
                                     <div className={`status-${reportsData.filter(e => e.estado === 'abierto' && e.id_aula === id_aula).length > 0 ? 'problem' : 'success'}`} />
 
@@ -84,7 +84,7 @@ const ClassroomsCards = () => {
                                             {tipo_aula} {aula}
                                         </Typography>
                                     </CardContent>
-                                    <CardActions key={id_aula}>
+                                    <CardActions>
                                         <Button
                                             size="small"
                                             onClick={() => toggle(null, [[tipo_aula] , [aula]], 'create-incidence', item)}
@@ -92,7 +92,6 @@ const ClassroomsCards = () => {
                                     </CardActions>
                                 </Card>
                             </TabPanel>
-                        </>
                     )
                 })
             }
