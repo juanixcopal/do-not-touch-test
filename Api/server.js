@@ -9,13 +9,14 @@ const reportes = require('./tables/reporte.js');
 const tipoaulas = require('./tables/tipoAulas.js')
 const incidencias = require('./petitions/incidents.js');
 const classrooms = require('./petitions/classrooms.js');
+const user = require('./tables/user.js')
 
 const app = express()
 
 app.set('port', process.env.PORT || 3050)
 
 const dbOptions ={
-    host: '192.168.0.17',
+    host: '172.27.18.199',
     port: 3306,
     user: 'rene',
     password: 'ixcopalsj',
@@ -34,13 +35,14 @@ app.get('/',(req, res)=>{
     res.send('Welcome to APY the welcome to the issues API')
 })
 
-app.use('/reporte', reportes)
-app.use('/aula', aulas)
-app.use('/estado', estados)
-app.use('/tipo', tipoaulas)
-app.use('/planta', plantas)
-app.use('/incidencias', incidencias)
-app.use('/classroom', classrooms)
+app.use('/api', reportes)
+app.use('/api', aulas)
+app.use('/api', estados)
+app.use('/api', tipoaulas)
+app.use('/api', plantas)
+app.use('/api', incidencias)
+app.use('/api', classrooms)
+app.use('/api', user)
 
 //Server running
 app.listen(app.get('port'), ()=>{
