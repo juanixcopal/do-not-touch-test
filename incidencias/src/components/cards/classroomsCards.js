@@ -61,7 +61,7 @@ const ClassroomsCards = () => {
             id_estado_incidencia: state.id_estado_incidencia,
             id_aula
         };
-        axios.post("http://172.27.20.114:3050/reporte/reportes", userData).then((response) => {
+        axios.post("http://192.168.0.17:3050/reporte/reportes", userData).then((response) => {
             // console.log(response.status);
             // console.log(response.data);
             toggle()
@@ -103,9 +103,9 @@ const ClassroomsCards = () => {
             >
                 <div className='content' >
                     <div className="incident-form">
-                        <form onSubmit={handleSubmit}>
+                        <form onSubmit={handleSubmit} action='#'>
                             <p>
-                                <label form="titulo">Titulo</label>
+                                <label>Titulo</label>
                                 <input
                                     type='text'
                                     name='titulo'

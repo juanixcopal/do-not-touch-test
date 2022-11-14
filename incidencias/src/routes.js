@@ -1,6 +1,6 @@
 import FloorOneIncidents from './pages/staff/floorOneIncidents'
 import FloorTwoIncidents from 'pages/staff/flooeTwoIncidents';
-import { MdOutlineAccountBalance } from 'react-icons/md'
+import { MdOutlineAccountBalance } from 'react-icons/md';
 
 var routes = [
     {
