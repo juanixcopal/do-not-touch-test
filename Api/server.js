@@ -8,19 +8,21 @@ const estados = require('./tables/estado.js');
 const reportes = require('./tables/reporte.js');
 const tipoaulas = require('./tables/tipoAulas.js')
 const incidencias = require('./petitions/incidents.js');
-const classrooms = require('./petitions/classrooms.js')
+const classrooms = require('./petitions/classrooms.js');
 
 const app = express()
 
 app.set('port', process.env.PORT || 3050)
 
 const dbOptions ={
-    host: '172.27.18.199',
+    host: '192.168.0.17',
     port: 3306,
     user: 'rene',
     password: 'ixcopalsj',
     database: 'incidencias'
 }
+
+// 172.27.18.199
 
 //Middlewares-----
 app.use(myconn(mysql, dbOptions, 'single'))
