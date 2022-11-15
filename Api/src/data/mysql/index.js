@@ -2,6 +2,8 @@ import mysql from 'mysql'
 import env from '../../config/env.js'
 
 import makeIncidencesData from './incidences.data.js'
+import makeClassroomsData from './classrooms.data.js'
+import makeSecurityData from './security.data.js'
 
 const { MYSQL_CONNECTION_LIMIT, MYSQL_PORT, MYSQL_HOST, MYSQL_USER, MYSQL_PASS, MYSQL_DATABASE, MYSQL_DEBUG } = env
 
@@ -42,5 +44,7 @@ async function makeDbConnection(query, params) {
 }
 
 const incidencesData = makeIncidencesData({ makeDbConnection })
+const classroomsData = makeClassroomsData({ makeDbConnection })
+const securityData = makeSecurityData({ makeDbConnection })
 
-export { incidencesData }
+export { incidencesData, classroomsData, securityData }

@@ -1,43 +1,13 @@
 import querys from './querys.js'
 
-export default function makeTicketAccessData({ makeDbConnection }) {
-    async function getClassrooms(params) {
+export default function makeClassroomsData({ makeDbConnection }) {
+    async function postCreateClassroom(params) {
         try {
-            const db = await makeDbConnection(querys.getClassrooms, params || '')
+            const db = await makeDbConnection(querys.postCreateClassroom, params || '')
             return db
         } catch (e) {
             console.log(e)
-            throw { status: 500, message: 'Error al obtener las aulas' }
-        }
-    }
-
-    async function getOpenIncidences(params) {
-        try {
-            const db = await makeDbConnection(querys.getOpenIncidences, params || '')
-            return db
-        } catch (e) {
-            console.log(e)
-            throw { status: 500, message: 'Error al obtener las incidencias abiertas' }
-        }
-    }
-
-    async function getFloors(params) {
-        try {
-            const db = await makeDbConnection(querys.getFloors, params || '')
-            return db
-        } catch (e) {
-            console.log(e)
-            throw { status: 500, message: 'Error al obtener las incidencias abiertas' }
-        }
-    }
-
-    async function postCreateIncidence(params) {
-        try {
-            const db = await makeDbConnection(querys.postCreateIncidence, params || '')
-            return db
-        } catch (e) {
-            console.log(e)
-            throw { status: 500, message: 'Error al crear la incidencia' }
+            throw { status: 500, message: 'Error al crear el aula' }
         }
     }
 
@@ -101,5 +71,5 @@ export default function makeTicketAccessData({ makeDbConnection }) {
     //     }
     // }
 
-    return Object.freeze({ getClassrooms, getOpenIncidences, getFloors, postCreateIncidence })
+    return Object.freeze({ postCreateClassroom })
 }

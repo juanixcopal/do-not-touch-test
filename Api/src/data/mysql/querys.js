@@ -24,8 +24,14 @@ const querys = {
     postCreateIncidence: `
         INSERT INTO tb_reporte (titulo, descripcion, id_estado_incidencia, id_aula) VALUES (?,?,?,?)
     `,
-    postCreateClassrooms: `
+    postCreateClassroom: `
         INSERT INTO tb_aula (aula, id_planta, id_tipo_aula) VALUES (?,?,?)
+    `,
+    postTryLogin: `
+        
+    `,
+    validateUserCredentials: `
+        SELECT * FROM 
     `
 }
 
